@@ -1,26 +1,26 @@
 # Baselines  
-(1) BERT: It is a pre-training model proposed by Google AI Research Institute in October 2018. It is a milestone model achievement in the history of NLP development.  
-(2) BERT-wwm: wwm is Whole Word Masking (Mask the whole word). Compared to Bert, its improvement is to replace a complete word with a Mask tag instead of a subword.  
-(3) RoBERTa: The RoBERTa model uses larger model parameters, larger bacth size, and more training data. Besides, in the training method, Roberta removes the next sentence prediction task, adopts dynamic masking, and uses text encoding.  
-(4) Zhongkeda-BERT: It uses the Daizhige corpus and the Tang Poetry and Song Ci data sets for further pre-training, and modified the maximum sentence length from 128 to 512. In addition, a restricted beam search is set up to exclude illegal transfers.  
+(1)``` BERT```: It is a pre-training model proposed by Google AI Research Institute in October 2018. It is a milestone model achievement in the history of NLP development.  
+(2) ```BERT-wwm```: wwm is Whole Word Masking (Mask the whole word). Compared to Bert, its improvement is to replace a complete word with a Mask tag instead of a subword.  
+(3) ```RoBERTa_zh```: The RoBERTa model uses larger model parameters, larger bacth size, and more training data. Besides, in the training method, Roberta removes the next sentence prediction task, adopts dynamic masking, and uses text encoding.  
+(4) ```Zhongkeda-BERT```: It uses the Daizhige corpus and the Tang Poetry and Song Ci data sets for further pre-training, and modified the maximum sentence length from 128 to 512. In addition, a restricted beam search is set up to exclude illegal transfers.  
 
 # Implementation Details   
 We follow the pre-training hyper-parameters used in BERT. For fine-tuning, most hyper-parameters are the same as pre-training, except batch size, learning rate, and number of training epochs. We find the following ranges of possible values work well on the training datasets with gold annotations, i.e., batch size: 32, learning rate (Adam): 5e-5, 3e-5, 2e-5, number of epochs ranging from 3 to 10.   
 
 # File Discription  
-data_ner 文件夹：包含NER任务的训练、校验以及测试数据集。  
-new_classification_data_guwen 文件夹：包含关系分类任务的训练、校验以及测试数据集。  
-sequence_labeling_data_guwen 文件夹：包含关系数据序列标注任务的训练、校验以及测试数据集。  
-raw_data_guwen 文件夹：古文关系标注原始数据。  
-run_NER.py:命名实体识别微调代码。  
-predicate_data_manager.py:将原始数据处理为关系分类任务数据集的代码。  
-run_predicate_classification.py：关系分类任务微调代码。  
-sequence_labeling_data_manager.py：将原始数据处理为关系数据序列标注任务数据集的代码。  
-run_sequnce_labeling.py：关系数据序列标注任务微调代码。  
-prepare_data_for_labeling_infer.py：把关系分类模型预测结果转换成序列标注模型的预测输入。  
-produce_submit_json_file.py：生成关系抽取结果。  
-evaluate_classification.py:关系分类性能评测代码。  
-evaluate_labeling.py:关系抽取性能评测代码。  
+```data_ner``` 文件夹：包含NER任务的训练、校验以及测试数据集。  
+```new_classification_data_guwen``` 文件夹：包含关系分类任务的训练、校验以及测试数据集。  
+```sequence_labeling_data_guwen``` 文件夹：包含关系数据序列标注任务的训练、校验以及测试数据集。  
+```raw_data_guwen``` 文件夹：古文关系标注原始数据。  
+```run_NER.py```:命名实体识别微调代码。  
+```predicate_data_manager.py```:将原始数据处理为关系分类任务数据集的代码。  
+```run_predicate_classification.py```：关系分类任务微调代码。  
+```sequence_labeling_data_manager.py```：将原始数据处理为关系数据序列标注任务数据集的代码。  
+```run_sequnce_labeling.py```：关系数据序列标注任务微调代码。  
+```prepare_data_for_labeling_infer.py```：把关系分类模型预测结果转换成序列标注模型的预测输入。  
+```produce_submit_json_file.py```：生成关系抽取结果。  
+```evaluate_classification.py```:关系分类性能评测代码。  
+```evaluate_labeling.py```:关系抽取性能评测代码。  
 
 # 命名实体识别运行命令  
 ```

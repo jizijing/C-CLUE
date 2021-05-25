@@ -2,8 +2,7 @@
 (1) BERT: It is a pre-training model proposed by Google AI Research Institute in October 2018. It is a milestone model achievement in the history of NLP development.  
 (2) BERT-wwm: wwm is Whole Word Masking (Mask the whole word). Compared to Bert, its improvement is to replace a complete word with a Mask tag instead of a subword.  
 (3) RoBERTa: The RoBERTa model uses larger model parameters, larger bacth size, and more training data. Besides, in the training method, Roberta removes the next sentence prediction task, adopts dynamic masking, and uses text encoding.  
-(4) GuwenBERT: It is trained on the corpus of ancient literature from the Daizhige. Besides, GuwenBERT's vocabulary is based on ancient Chinese corpus, taking high-frequency characters among them.  
-(5) Zhongkeda-BERT: It uses the Daizhige corpus and the Tang Poetry and Song Ci data sets for further pre-training, and modified the maximum sentence length from 128 to 512. In addition, a restricted beam search is set up to exclude illegal transfers.  
+(4) Zhongkeda-BERT: It uses the Daizhige corpus and the Tang Poetry and Song Ci data sets for further pre-training, and modified the maximum sentence length from 128 to 512. In addition, a restricted beam search is set up to exclude illegal transfers.  
 
 # Implementation Details   
 We follow the pre-training hyper-parameters used in BERT. For fine-tuning, most hyper-parameters are the same as pre-training, except batch size, learning rate, and number of training epochs. We find the following ranges of possible values work well on the training datasets with gold annotations, i.e., batch size: 32, learning rate (Adam): 5e-5, 3e-5, 2e-5, number of epochs ranging from 3 to 10.   
